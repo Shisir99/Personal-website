@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head">
+</head>
+<body>
+    <header th:replace="fragments/header :: header">
+    </header>
+    
+    <main role="main">
+        <div class="container">
+	        <!-- Jumbotron -->
+		    <div class="jumbotron text-center">
+		        <h1 class="display-4">Shishir Kumar Singh</h1>
+		        <p class="lead">Associate Solution Engineer(ASL) - NSLHub, Hyderabad</p>
+		        <p><img src="img/npruehs.png" alt="Shishir" /></p>
+		        <hr class="my-4">
+		        <p>Hello visitors, I am an UG student from IIT Mandi(H.P), Electrical engineering being my major. My topics of interest include coding(mostly web development) & problem solving. I love to apply my learnings to solve real world problems. In addition to this, watching sci-fi movies and tv-series also includes in my hobby.  
+		        To learn more about my skills, take a closer look at my projects below.
+		        </p>
+		        <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
+		    </div>
+		    
+		    <!-- Cards -->
+		    <div class="card-deck">
+		        <div class="col-md-4" th:each="projectData : ${projects}" th:include="fragments/project :: project" 
+	                th:with="projectData=${projectData}">
+				</div>
+			</div>
+		</div>
+    </main>
+    
+    <footer th:replace="fragments/footer :: footer">
+	</footer>
+
+    <span th:replace="fragments/scripts :: scripts">
+    </span>
+</body>
+</html>
